@@ -1,46 +1,7 @@
 .App {
   text-align: center;
-}
-
-/*.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #FFFFFF;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-body {
-  background-color: #B1B3B3;
-  margin: 0; 
+  color: white; /* Fondi värv */
+  font-family: 'Kanit', sans-serif;
 }
 
 .item1 { grid-area: header; }
@@ -56,7 +17,6 @@ body {
     'menu menu menu menu main right'
     'menu menu menu menu footer right';
   gap: 2%; /* Use percentage for gap */
-  background-color: #2196F3;
   padding: 5%;
   height: 100vh; /* Full viewport height */
 }
@@ -65,43 +25,42 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: left;
   padding: 2% 0;
-  font-size: 2.5vw;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pealkiri{
+  font-weight: 400;
 }
 
 .background1 {
-  background-color: #2196F3;
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
 }
 
 .background2 {
-  background-color: #2196F3;
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
 }
 
 .background3 {
-  background-color: #2196F3;
   width: 15%;
   height:160vh;
   padding: 2%;
 }
 
-.background4 {
-  background-color: #2196F3;
+.background5 {
   padding: 2%;
 }
 
-.background5 {
-  background-color: #2196F3;
-  padding: 2%;
+h3{
+  font-weight: 700;
+  line-height: 1;
 }
 
 .highlight{
   font-weight: bold;
-  color: red;
-  background-color: #2196F3;
+  background: linear-gradient(to right, #931912 , #df271d);/* tekstile värvi ülemineku lisamine */
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
 }
 
 .image-little{
@@ -112,11 +71,11 @@ body {
 
 
 .image-big{
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Kalevipoeg.jpg/500px-Kalevipoeg.jpg");
-  width: 40vh;
-  height: 95vh;
-  background-size: 40vh 95vh;
   position:relative;
+  background-color: #ffffff;
+  width: 40vh;
+  height: 90vh;
+  background-size: 40vh 95vh;
   overflow:hidden;
   clip-path: polygon(  /* Teeb diagonaalsed ääred */
     0 5%,
@@ -128,7 +87,13 @@ body {
     10% 100%,
     0% 95%,
     0% 10%
-  )
+  );
+  color: black;/* teksti kujundus */
+  text-align: left;
+  padding-left: 2vh;
+  padding-right: 3vh;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
 }
 
 
@@ -149,13 +114,13 @@ li {
 
 /* Style for lines using ::before pseudo-element */
 li::before {
-  content: "";
   position: absolute;
+  content: "";
   left: 0;
   top: 50%; /* Position the line vertically in the middle of the list item */
   width: 1.5vh; /* Adjust the width of the line as needed */
   height: 0.5vh; /* Adjust the height of the line as needed */
-  background-color: red; /* Line color */
+  background: linear-gradient(to right, #931912 , #df271d); /* Line color */
   border-radius: 1.5px; /* Add border-radius to make line corners round */
 }
 
@@ -173,6 +138,182 @@ ul ul {
 }
 
 ul ul li::before {
-  background-color: green; /* Change the line color to green for nested lists */
+  background: linear-gradient(to right, #ffffff , #7b808e); /* Change the line color to green for nested lists */
+}
+
+.input-container-border{
+  width: 100%;
+  padding: 0.2vh;
+  border: 3px;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.1),
+    0 1px 1px -2px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(to right, #d4dae8, #a6b6d8);
+}
+
+input{
+  width: 94.75%;
+  padding: 1vh;
+  font-size: 3vh;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.static-text {
+  position: absolute;
+  right: 1vh; /* Adjust the right position as needed */
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.input-container {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1em;
+  border-radius: 3px;
+}
+
+
+
+
+.checkbox-container {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin: 2px; /* Adjust the distance between outer span and checkbox */
+}
+
+input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox-border {
+  display: inline-block;
+  position: relative;
+  width: 20px; /* Set the width of the outer span */
+  height: 20px; /* Set the height of the outer span */
+  border-radius: 3px;
+  overflow: hidden; /* Clip the inner content to the rounded corners */
+  background: linear-gradient(to right, #d4dae8, #a6b6d8);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.1),
+    0 1px 1px -2px rgba(0, 0, 0, 0.05);
+}
+
+.checkbox-border::before {
+  content: ''; /* Create an empty content box */
+  position: absolute;
+  top: 2px; /* Adjust the position as needed */
+  left: 2px; /* Adjust the position as needed */
+  width: 16px; /* Set the width of the pseudo-element */
+  height: 16px; /* Set the height of the pseudo-element */
+  border-radius: 2px; /* Adjust the border-radius */
+  background-color: white; /* Set the background color to cover the checkbox */
+  cursor:pointer;
+}
+
+input[type="checkbox"]:checked + .checkbox-border::before {
+  content: '\2714'; /* Unicode check mark character */
+}
+
+.label-text {
+  margin-left: 5px; /* Adjust the distance between the checkbox and label text */
+  font-weight: 400;
+}
+
+
+
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: black;
+}
+
+
+::placeholder { /* Firefox */
+  color: black;
+  opacity: 1; 
+}
+
+label{
+  font-weight: 400;
+}
+
+
+
+.button{
+  background: linear-gradient(to right, #911812, #e0271c);
+  border: none;
+  outline: none;
+  border-radius: 2em;
+  padding: 2vh 4vh 2vh 4vh;
+  font-weight: 400;
+  color: white;
+  text-shadow: 2px 2px #732420;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  cursor:pointer;
+}
+
+
+.joon{
+  position: absolute;
+  height: 1px;
+  background: #e8ecf4;
+  width: 200% ;
+  right: 0;
+}
+
+
+.cover{
+ display: flex;
+ margin-bottom: 1em;
+}
+
+.cover-column{
+  text-align: center;
+}
+
+.cover-column-gap{
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+.cover-column-text1{
+  font-weight: 400;
+  line-height: 1;
+}
+
+.cover-column-text2{
+  font-weight: 600;
+}
+
+.cover-column-text3{
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.cover-column-text4{
+  font-weight: 400;
+  color: #7a808f;
+  line-height: 1;
+}
+
+
+
+.solution{
+  text-align: center;
+  margin-top: 2em;
+  line-height: 1;
+}
+
+.solution-text{
+  font-weight: 400;
+}
+
+.solution-text-awnser{
+  font-weight: 600;
+  font-size: 2em;
 }
 
